@@ -11,28 +11,21 @@ import Footer from './Footer/Footer';
 class App extends Component {
   state = {
     cartData: {
-      1: 3,
-      2: 5,
-      3: 5,
-      4: 7,
-      //count: 0,
-      //price: 0,
+
     }
   };
 
  
 
-  //addCount = (count,price) => {
-  //  this.setState((prevCount) => ({
-  //    cartData: {
-  //      1: 3,
-  //      2: 5,
-  //      count: prevCount.cartData.count + count,
-  //      price: prevCount.cartData.price +(count*price), 
-  //    }
-  //  })
-  //  );
-  //}
+  addCount = (id,count) => {
+    this.setState((prevCount) => ({
+      cartData: {
+        ...prevCount.cartData,
+        [id] : (prevCount.cartData[id] || 0) + count,
+      }
+    })
+    );
+  }
 
   render() {
     return (
@@ -40,7 +33,7 @@ class App extends Component {
         <Header
           cartDataTwo={this.state.cartData} />
         <button
-          onClick={() => this.addCount(2,1000)} > ТЕСТ КНОПКИ</button>
+          onClick={() => this.addCount(2,5)} > ТЕСТ КНОПКИ</button>
         <Main
           cartDataProops={this.addCount} />
         <Footer />

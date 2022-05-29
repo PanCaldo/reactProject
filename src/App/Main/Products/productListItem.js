@@ -28,15 +28,15 @@ changeColor() {
     ))
     }
 
-    addCount  (count,price) {
-        this.setState((prevCount) => ({
-          cartData: {
-            count: prevCount.cartData.count + count,
-            price: prevCount.cartData.price +(count*price), 
-          }
-        })
-        );
-      }
+    //addCount = (count,price) => {
+    //    this.setState((prevCount) => ({
+    //      cartData: {
+    //        count: prevCount.cartData.count + count,
+    //        price: prevCount.cartData.price +(count*price), 
+    //      }
+    //    })
+    //    );
+    //  }
     
     
     
@@ -46,6 +46,7 @@ changeColor() {
     render() {
 
         const {
+            id,
             cartDataProopsThree,
             name,
             description,
@@ -80,7 +81,7 @@ changeColor() {
                     >+</button>
                 </div>
                 <button className="btn-add-to-cart"
-                onClick={() => cartDataProopsThree(this.state.productCount,price)}
+                onClick={() => cartDataProopsThree(id,this.state.productCount)}
                 >Add to cart</button>
             </div>
         )

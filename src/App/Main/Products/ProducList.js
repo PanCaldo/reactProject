@@ -23,13 +23,14 @@ const ProductList = ({
                     }) => (
                     <div className="col-lg-6" key={id} >
                             <ProductListItem
-                            cartDataProopsThree={cartDataProopsTwo}
-                            name={name}
-                            description={description}
-                            type={type}
-                            capacity={capacity}
-                            price={price}
-                            image={image}
+                                cartDataProopsThree={cartDataProopsTwo}
+                                name={name}
+                                description={description}
+                                type={type}
+                                capacity={capacity}
+                                price={price}
+                                image={image}
+                                id = {id}
                          />
                     </div>
                 ))
